@@ -2,7 +2,11 @@ let port = 3001;
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
-const app = express();
+app.use(cors({
+  origin: 'https://ja-tm-backend.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 /// dependencies
 
 const jwt = require("jsonwebtoken");
