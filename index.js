@@ -2,9 +2,17 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
+<<<<<<< HEAD
 const app = express();
 const dotenv = require('dotenv') ;
 dotenv.config() ;
+=======
+app.use(cors({
+  origin: 'https://my-new-repo-snowy-eight.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));        
+>>>>>>> 0069d59e27df0995aae3f5c486b594d019c1781d
 /// dependencies
 
 const jwt = require("jsonwebtoken");
@@ -211,5 +219,5 @@ app.post("/sendMoney", auth, async (req, res) => {
     }
 })
 
-
-app.listen(3001);
+module.exports = app ;
+app.listen(3000);

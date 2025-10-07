@@ -1,5 +1,9 @@
 const express = require('express');
-const cors = require('cors');
+app.use(cors({
+  origin: 'https://my-new-repo-snowy-eight.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 const app = express();
 /// dependencies    
 const mongoose = require('mongoose');
