@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 app.use(cors({
-  origin: 'https://ja-tm-backend.vercel.app',
+  origin: 'https://my-new-repo-snowy-eight.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
