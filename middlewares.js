@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken") ;
 const { User , Account } = require('./db.js') ;
-const {JWT_KEY} = require("./jwtSecret.js") ;
+const dotenv = require('dotenv') ;
+dotenv.config() ;
 
 async function checkUserExistence(req,res,next) {
    const userId = req.body.userId ;
@@ -36,7 +37,7 @@ function auth(req, res, next) {
  
         const token = authHeader.split(' ')[1];
 
-        const decoded = jwt.verify(token, JWT_KEY);
+        const decoded = jwt.verify(token, process.env.JWT_KEY);
         
         if (decoded) {
             req.userId = decoded ;

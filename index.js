@@ -1,13 +1,15 @@
-let port = 3001;
+
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const dotenv = require('dotenv') ;
+dotenv.config() ;
 /// dependencies
 
 const jwt = require("jsonwebtoken");
 const { userZodSchema, updateUserDetailSchema } = require('./zod.js');
-const { JWT_KEY } = require("./jwtSecret.js");
+
 const { User, Account } = require('./db.js');
 const { checkUserExistence , auth } = require('./middlewares.js')
 
@@ -66,7 +68,7 @@ app.post("/signin", async (req, res) => {
         password: body.password
     })
     if (signing) {
-        const token = jwt.sign(body.userId, JWT_KEY);
+        const token = jwt.sign(body.userId, process.env.JWT_KEY);
         res.json({
             msg: "signed in successfully",
             token ,
