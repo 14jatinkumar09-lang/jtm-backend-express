@@ -1,4 +1,4 @@
-let port = 3001;
+
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
@@ -213,5 +213,5 @@ app.post("/sendMoney", auth, async (req, res) => {
     }
 })
 
-
-app.listen(3001);
+module.exports = app ;
+app.listen(3000);
