@@ -2,17 +2,9 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
-<<<<<<< HEAD
 const app = express();
 const dotenv = require('dotenv') ;
 dotenv.config() ;
-=======
-app.use(cors({
-  origin: 'https://my-new-repo-snowy-eight.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));        
->>>>>>> 0069d59e27df0995aae3f5c486b594d019c1781d
 /// dependencies
 
 const jwt = require("jsonwebtoken");
@@ -22,9 +14,10 @@ const { User, Account } = require('./db.js');
 const { checkUserExistence , auth } = require('./middlewares.js')
 
 app.use(cors({
-    origin:"*",
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: ["Content-Type", "Authorization"]
+    /////real url 'https://my-new-repo-snowy-eight.vercel.app' ,
+  origin:  'http://localhost:5173' ,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }));
 app.use(express.json());
 
