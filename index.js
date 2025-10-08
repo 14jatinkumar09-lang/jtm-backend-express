@@ -15,7 +15,7 @@ const { checkUserExistence , auth } = require('./middlewares.js')
 
 app.use(cors({
     /////real url 'https://my-new-repo-snowy-eight.vercel.app' ,
-  origin:  'http://localhost:5173' ,
+  origin:  'https://j-tm-react-project.vercel.app' ,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
